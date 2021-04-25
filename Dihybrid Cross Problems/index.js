@@ -358,7 +358,5 @@ if (phenoTotalCounter === 16) {
   console.warn("THIS DATA IS INVALID, CHECK Parents.json");
 }
 
-// TODO: Figure out why the data's invalid.
-
 console.log("\n\n");
 console.timeEnd("Time taken: ");
