@@ -7,7 +7,7 @@ let parent1 = {};
 let parent2 = {};
 
 // Load parent genetic information from node args or from the files if there aren't any.
-if (process.argv.length >= 3) {
+if (process.argv.length > 3) {
   parent1.full = process.argv[2];
   parent2.full = process.argv[3];
 } else {
