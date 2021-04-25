@@ -2,10 +2,19 @@
 console.time("Time taken: ");
 
 // Load parent genetic informtion.
+
 let parent1 = {};
 let parent2 = {};
-parent1.full = require('./Parents.json').parent1;
-parent2.full = require('./Parents.json').parent2;
+
+// Load parent genetic information from node args or from the files if there aren't any.
+if (process.argv.length >= 3) {
+  parent1.full = process.argv[2];
+  parent2.full = process.argv[3];
+} else {
+  parent1.full = require('./Parents.json').parent1;
+  parent2.full = require('./Parents.json').parent2;
+}
+
 console.log(`Parent 1: ${parent1.full}`);
 console.log(`Parent 2: ${parent2.full}`);
 // Figure out alleles.
@@ -302,7 +311,7 @@ for (let i = 0; i < 4; i++ ) {
 }
 
 console.log("\n");
-console.log("The horizontal axis is parent 1 and the vertical axis is parent 2.")
+console.log("The horizontal axis is parent 1 and the vertical axis is parent 2.");
 console.table(crosses);
 
 // Generate output:
